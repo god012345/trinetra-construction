@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Services | Tri Netra Construction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Tri Netra Construction</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar">
-    <div class="logo">Tri Netra Construction</div>
+    <div class="logo">
+        <span>🏗️</span> Tri Netra Construction
+    </div>
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -18,76 +22,259 @@
     </ul>
 </nav>
 
-<!-- HERO -->
-<section class="hero fade-in" style="padding:60px 40px; max-width:900px;">
-    <h1>Our Services</h1>
-    <p>Excellence in every brick, every project — choose the service that suits your needs.</p>
+<!-- SERVICES HERO -->
+<section class="hero fade-in">
+    <h1>Comprehensive Construction Services</h1>
+    <p>From foundation to finish, we deliver excellence in every project with precision and care</p>
 </section>
 
-<!-- SERVICES CARDS -->
+<!-- SERVICES CARDS WITH ICONS -->
 <section class="services-cards">
-
-    <!-- Residential -->
-    <div class="card fade-in" onclick="toggleSub('residentialSub')">
+    <!-- Residential Construction -->
+    <div class="card fade-in" onclick="toggleSub('residentialSub')" style="position: relative;">
+        <div style="position: absolute; top: 20px; right: 20px; color: var(--secondary-color); font-size: 2rem;">
+            <i class="fas fa-home"></i>
+        </div>
         <h2>Residential Construction</h2>
-        <p>We build modern and durable homes combining style, safety, and comfort.</p>
+        <p>We build modern and durable homes combining style, safety, and comfort with sustainable practices.</p>
+        
+        <div style="margin: 1.5rem 0;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0; color: var(--gray-color);">
+                <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                <span>Custom home design & construction</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0; color: var(--gray-color);">
+                <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                <span>Structural engineering & planning</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0; color: var(--gray-color);">
+                <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                <span>Quality material selection</span>
+            </div>
+        </div>
+
         <ul class="sub-services" id="residentialSub">
-            <li>Luxury Villas</li>
-            <li>Apartment Buildings</li>
-            <li>Eco-friendly Homes</li>
+            <li><i class="fas fa-crown"></i> Luxury Villas</li>
+            <li><i class="fas fa-building"></i> Apartment Buildings</li>
+            <li><i class="fas fa-leaf"></i> Eco-friendly Homes</li>
+            <li><i class="fas fa-swimming-pool"></i> Duplex Houses</li>
+            <li><i class="fas fa-mountain"></i> Farmhouse Construction</li>
         </ul>
-        <button onclick="selectService('Residential Construction')">Request Consultation</button>
+        
+        <button onclick="selectService('Residential Construction')" style="margin-top: 1.5rem;">
+            <i class="fas fa-calendar-check"></i> Request Consultation
+        </button>
     </div>
 
-    <!-- Commercial -->
-    <div class="card fade-in" onclick="toggleSub('commercialSub')">
+    <!-- Commercial Projects -->
+    <div class="card fade-in" onclick="toggleSub('commercialSub')" style="position: relative; animation-delay: 0.2s;">
+        <div style="position: absolute; top: 20px; right: 20px; color: var(--secondary-color); font-size: 2rem;">
+            <i class="fas fa-building"></i>
+        </div>
         <h2>Commercial Projects</h2>
-        <p>From offices to malls, we deliver commercial spaces with excellence.</p>
+        <p>From offices to malls, we deliver commercial spaces with excellence, functionality, and modern design.</p>
+        
+        <div style="margin: 1.5rem 0;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0; color: var(--gray-color);">
+                <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                <span>Commercial space planning</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0; color: var(--gray-color);">
+                <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                <span>Infrastructure development</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0; color: var(--gray-color);">
+                <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                <span>Project management</span>
+            </div>
+        </div>
+
         <ul class="sub-services" id="commercialSub">
-            <li>Office Complexes</li>
-            <li>Shopping Malls</li>
-            <li>Warehouses & Factories</li>
+            <li><i class="fas fa-briefcase"></i> Office Complexes</li>
+            <li><i class="fas fa-shopping-cart"></i> Shopping Malls</li>
+            <li><i class="fas fa-warehouse"></i> Warehouses & Factories</li>
+            <li><i class="fas fa-hotel"></i> Hotels & Resorts</li>
+            <li><i class="fas fa-school"></i> Educational Institutions</li>
         </ul>
-        <button onclick="selectService('Commercial Projects')">Request Consultation</button>
+        
+        <button onclick="selectService('Commercial Projects')" style="margin-top: 1.5rem;">
+            <i class="fas fa-calendar-check"></i> Request Consultation
+        </button>
     </div>
 
-    <!-- Renovation -->
-    <div class="card fade-in" onclick="toggleSub('renovationSub')">
+    <!-- Renovation & Remodeling -->
+    <div class="card fade-in" onclick="toggleSub('renovationSub')" style="position: relative; animation-delay: 0.4s;">
+        <div style="position: absolute; top: 20px; right: 20px; color: var(--secondary-color); font-size: 2rem;">
+            <i class="fas fa-tools"></i>
+        </div>
         <h2>Renovation & Remodeling</h2>
-        <p>Transforming old spaces into modern masterpieces with expert craftsmanship.</p>
-        <ul class="sub-services" id="renovationSub">
-            <li>Home Makeovers</li>
-            <li>Office Renovations</li>
-            <li>Kitchen & Bathroom Upgrades</li>
-        </ul>
-        <button onclick="selectService('Renovation & Remodeling')">Request Consultation</button>
-    </div>
+        <p>Transforming old spaces into modern masterpieces with expert craftsmanship and innovative solutions.</p>
+        
+        <div style="margin: 1.5rem 0;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0; color: var(--gray-color);">
+                <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                <span>Space optimization</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0; color: var(--gray-color);">
+                <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                <span>Structural repairs & upgrades</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0; color: var(--gray-color);">
+                <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                <span>Modern amenities integration</span>
+            </div>
+        </div>
 
+        <ul class="sub-services" id="renovationSub">
+            <li><i class="fas fa-home"></i> Home Makeovers</li>
+            <li><i class="fas fa-building"></i> Office Renovations</li>
+            <li><i class="fas fa-sink"></i> Kitchen & Bathroom Upgrades</li>
+            <li><i class="fas fa-paint-roller"></i> Interior & Exterior Painting</li>
+            <li><i class="fas fa-expand"></i> Space Extension</li>
+        </ul>
+        
+        <button onclick="selectService('Renovation & Remodeling')" style="margin-top: 1.5rem;">
+            <i class="fas fa-calendar-check"></i> Request Consultation
+        </button>
+    </div>
 </section>
 
-<!-- JS for sub-services toggle and consultation selection -->
+<!-- ADDITIONAL SERVICES -->
+<section style="padding: 4rem 5%; background: var(--light-gray);">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+        <h2 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 1rem;">
+            <i class="fas fa-star"></i> Additional Services
+        </h2>
+        <p style="color: var(--gray-color); margin-bottom: 3rem; font-size: 1.1rem;">
+            Complete solutions for all your construction needs
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+            <div class="fade-in card" style="text-align: center; padding: 1.5rem;">
+                <div style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;">
+                    <i class="fas fa-drafting-compass"></i>
+                </div>
+                <h3>Architectural Design</h3>
+                <p>Custom architectural plans and 3D visualizations</p>
+            </div>
+            
+            <div class="fade-in card" style="text-align: center; padding: 1.5rem; animation-delay: 0.1s;">
+                <div style="font-size: 2.5rem; color: var(--secondary-color); margin-bottom: 1rem;">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Sustainable Building</h3>
+                <p>Eco-friendly materials and energy-efficient designs</p>
+            </div>
+            
+            <div class="fade-in card" style="text-align: center; padding: 1.5rem; animation-delay: 0.2s;">
+                <div style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem;">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h3>Project Management</h3>
+                <p>End-to-end project supervision and quality control</p>
+            </div>
+            
+            <div class="fade-in card" style="text-align: center; padding: 1.5rem; animation-delay: 0.3s;">
+                <div style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 1rem;">
+                    <i class="fas fa-file-contract"></i>
+                </div>
+                <h3>Legal Approvals</h3>
+                <p>Assistance with permits and regulatory compliance</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS SECTION -->
+<section style="padding: 5rem 5%; max-width: 1200px; margin: 0 auto;">
+    <h2 style="text-align: center; color: var(--primary-color); font-size: 2.5rem; margin-bottom: 3rem;">
+        <i class="fas fa-project-diagram"></i> Our Process
+    </h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div class="fade-in" style="text-align: center;">
+            <div style="width: 80px; height: 80px; background: var(--primary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem; font-weight: bold;">1</div>
+            <h3>Consultation</h3>
+            <p>Understanding your vision and requirements</p>
+        </div>
+        
+        <div class="fade-in" style="text-align: center; animation-delay: 0.2s;">
+            <div style="width: 80px; height: 80px; background: var(--secondary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem; font-weight: bold;">2</div>
+            <h3>Planning</h3>
+            <p>Detailed design and project blueprint</p>
+        </div>
+        
+        <div class="fade-in" style="text-align: center; animation-delay: 0.4s;">
+            <div style="width: 80px; height: 80px; background: var(--accent-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem; font-weight: bold;">3</div>
+            <h3>Execution</h3>
+            <p>Quality construction with regular updates</p>
+        </div>
+        
+        <div class="fade-in" style="text-align: center; animation-delay: 0.6s;">
+            <div style="width: 80px; height: 80px; background: var(--primary-dark); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem; font-weight: bold;">4</div>
+            <h3>Handover</h3>
+            <p>Final inspection and project delivery</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section style="padding: 4rem 5%; background: linear-gradient(45deg, var(--primary-dark), var(--primary-color)); color: white; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Ready to Start Your Project?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Contact us today for a free consultation and customized quote</p>
+        <a href="contact.html" class="hero-link" style="background: var(--secondary-color); font-size: 1.2rem; padding: 1rem 3rem;">
+            <i class="fas fa-calendar-alt"></i> Schedule Consultation
+        </a>
+    </div>
+</section>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919677767833" target="_blank" class="whatsapp-float">
+     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="50" alt="WhatsApp">
+</a>
+
+
 <script>
+// Enhanced toggle function with animation
 function toggleSub(id){
     const el = document.getElementById(id);
+    const allSubs = document.querySelectorAll('.sub-services');
+    
+    // Close all other sub-services
+    allSubs.forEach(sub => {
+        if(sub.id !== id && sub.style.display === "block") {
+            sub.style.display = "none";
+        }
+    });
+    
+    // Toggle current
     if(el.style.display === "block"){
         el.style.display = "none";
     } else {
         el.style.display = "block";
+        el.style.animation = "slideDown 0.3s ease";
     }
 }
 
-// Redirect user to Contact page and preselect service
+// Enhanced service selection with confirmation
 function selectService(serviceName){
-    const url = `contact.html?service=${encodeURIComponent(serviceName)}`;
-    window.location.href = url;
+    if(confirm(`Would you like to request a consultation for "${serviceName}"?`)) {
+        const url = `contact.html?service=${encodeURIComponent(serviceName)}`;
+        window.location.href = url;
+    }
 }
+
+// Add click outside to close sub-services
+document.addEventListener('click', function(e) {
+    if(!e.target.closest('.card')) {
+        const allSubs = document.querySelectorAll('.sub-services');
+        allSubs.forEach(sub => {
+            sub.style.display = "none";
+        });
+    }
+});
 </script>
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/919677767833" target="_blank" class="whatsapp-float">
-    <img src="images/whatsapp-icon.png" alt="WhatsApp" />
-</a>
 
 </body>
 </html>
-
-
