@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Services | Tri Netra Construction</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">Tri Netra Construction</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero fade-in" style="padding:60px 40px; max-width:900px;">
+    <h1>Our Services</h1>
+    <p>Excellence in every brick, every project — choose the service that suits your needs.</p>
+</section>
+
+<!-- SERVICES CARDS -->
+<section class="services-cards">
+
+    <!-- Residential -->
+    <div class="card fade-in" onclick="toggleSub('residentialSub')">
+        <h2>Residential Construction</h2>
+        <p>We build modern and durable homes combining style, safety, and comfort.</p>
+        <ul class="sub-services" id="residentialSub">
+            <li>Luxury Villas</li>
+            <li>Apartment Buildings</li>
+            <li>Eco-friendly Homes</li>
+        </ul>
+        <button onclick="selectService('Residential Construction')">Request Consultation</button>
+    </div>
+
+    <!-- Commercial -->
+    <div class="card fade-in" onclick="toggleSub('commercialSub')">
+        <h2>Commercial Projects</h2>
+        <p>From offices to malls, we deliver commercial spaces with excellence.</p>
+        <ul class="sub-services" id="commercialSub">
+            <li>Office Complexes</li>
+            <li>Shopping Malls</li>
+            <li>Warehouses & Factories</li>
+        </ul>
+        <button onclick="selectService('Commercial Projects')">Request Consultation</button>
+    </div>
+
+    <!-- Renovation -->
+    <div class="card fade-in" onclick="toggleSub('renovationSub')">
+        <h2>Renovation & Remodeling</h2>
+        <p>Transforming old spaces into modern masterpieces with expert craftsmanship.</p>
+        <ul class="sub-services" id="renovationSub">
+            <li>Home Makeovers</li>
+            <li>Office Renovations</li>
+            <li>Kitchen & Bathroom Upgrades</li>
+        </ul>
+        <button onclick="selectService('Renovation & Remodeling')">Request Consultation</button>
+    </div>
+
+</section>
+
+<!-- JS for sub-services toggle and consultation selection -->
+<script>
+function toggleSub(id){
+    const el = document.getElementById(id);
+    if(el.style.display === "block"){
+        el.style.display = "none";
+    } else {
+        el.style.display = "block";
+    }
+}
+
+// Redirect user to Contact page and preselect service
+function selectService(serviceName){
+    const url = `contact.html?service=${encodeURIComponent(serviceName)}`;
+    window.location.href = url;
+}
+</script>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919677767833" target="_blank" class="whatsapp-float">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp" />
+</a>
+
+</body>
+</html>
+
+
