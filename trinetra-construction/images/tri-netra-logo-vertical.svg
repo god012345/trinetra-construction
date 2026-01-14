@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" width="200" height="280">
+  <!-- Vertical Logo Format -->
+  
+  <defs>
+    <style>
+      .logo-primary { fill: #1a5f7a; }
+      .logo-accent { fill: #ff9f29; }
+      .logo-dark { fill: #0a3d62; }
+      .logo-outline { stroke: #0a3d62; stroke-width: 1.5; fill: none; }
+      .company-name { font-family: 'Segoe UI', Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #0a3d62; text-anchor: middle; }
+      .company-subtext { font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; fill: #1a5f7a; text-anchor: middle; }
+      .tagline { font-family: 'Segoe UI', Arial, sans-serif; font-size: 9px; fill: #636e72; text-anchor: middle; letter-spacing: 0.5px; }
+    </style>
+  </defs>
+  
+  <!-- LOGO SYMBOL -->
+  <g id="logo-symbol">
+    <!-- Triangle outline -->
+    <path d="M 100 20 L 160 120 L 40 120 Z" class="logo-outline" opacity="0.2"/>
+    
+    <!-- Top Eye -->
+    <circle cx="100" cy="35" r="13" class="logo-primary"/>
+    <rect x="91" y="26" width="18" height="18" rx="2" fill="#ffffff" opacity="0.2"/>
+    <circle cx="100" cy="35" r="5" class="logo-accent"/>
+    
+    <!-- Bottom Left Eye -->
+    <circle cx="55" cy="100" r="13" class="logo-primary"/>
+    <rect x="46" y="91" width="18" height="18" rx="2" fill="#ffffff" opacity="0.2"/>
+    <circle cx="55" cy="100" r="5" class="logo-accent"/>
+    
+    <!-- Bottom Right Eye -->
+    <circle cx="145" cy="100" r="13" class="logo-primary"/>
+    <rect x="136" y="91" width="18" height="18" rx="2" fill="#ffffff" opacity="0.2"/>
+    <circle cx="145" cy="100" r="5" class="logo-accent"/>
+    
+    <!-- Connecting Lines -->
+    <line x1="100" y1="48" x2="55" y2="87" stroke="#ff9f29" stroke-width="2" opacity="0.6"/>
+    <line x1="100" y1="48" x2="145" y2="87" stroke="#ff9f29" stroke-width="2" opacity="0.6"/>
+    <line x1="55" y1="100" x2="145" y2="100" stroke="#ff9f29" stroke-width="2" opacity="0.4"/>
+    
+    <!-- Center dot -->
+    <circle cx="100" cy="70" r="4" class="logo-accent"/>
+  </g>
+  
+  <!-- TEXT BELOW LOGO -->
+  <text x="100" y="165" class="company-name">Tri Netra</text>
+  <text x="100" y="190" class="company-subtext">Construction</text>
+  <text x="100" y="210" class="tagline">BUILDING EXCELLENCE</text>
+  
+  <!-- Optional decorative line -->
+  <line x1="60" y1="220" x2="140" y2="220" stroke="#ff9f29" stroke-width="2" opacity="0.6"/>
+  
+</svg>
+
+<!-- 
+VERTICAL LOGO WITH TEXT
+Use this for:
+- Social media profile pictures
+- Favicon (when converted to PNG)
+- App icons
+- Business card (vertical orientation)
+- Signboards
+- Construction helmets
+
+IMPLEMENTATION:
+
+1. SAVE AS: tri-netra-logo-vertical.svg
+
+2. USE IN HTML:
+   <img src="images/tri-netra-logo-vertical.svg" alt="Tri Netra Construction" 
+        class="logo-vertical" style="max-width: 200px; height: auto;">
+
+3. FOR SOCIAL MEDIA:
+   <!-- Facebook/LinkedIn -->
+   <img src="images/tri-netra-logo-vertical.svg" alt="Logo" 
+        style="width: 300px; margin: 20px auto;">
+   
+   <!-- Instagram Profile Picture -->
+   Convert to PNG 1080x1080px and upload directly
+
+4. CSS STYLING:
+   .logo-vertical {
+     max-width: 200px;
+     height: auto;
+     margin: 20px auto;
+     display: block;
+   }
+   
+   .logo-small {
+     max-width: 100px;
+   }
+   
+   .logo-large {
+     max-width: 400px;
+   }
+
+5. FOR FAVICON:
+   Step 1: Save this SVG as tri-netra-logo-vertical.svg
+   Step 2: Convert to PNG at these sizes:
+     - 16x16px
+     - 32x32px
+     - 64x64px
+     - 128x128px
+   
+   Step 3: Add to HTML head:
+   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+   <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
+
+6. CONVERSION TOOLS:
+   - Convertio: convertio.co/svg-to-png
+   - CloudConvert: cloudconvert.com
+   - Zamzar: zamzar.com
+   - Online tools are free and easy
+
+7. PRINT SIGNBOARDS:
+   Export as PDF or EPS for professional printing
+   Scale to desired size (no quality loss with vector)
+-->

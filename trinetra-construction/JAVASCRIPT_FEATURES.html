@@ -1,0 +1,480 @@
+<!-- 
+===========================================
+ADVANCED JAVASCRIPT ENHANCEMENTS FOR WEBSITE
+Add these features to enhance your website
+===========================================
+-->
+
+<!-- 
+FEATURE 1: SCROLL TO TOP BUTTON
+Add this before closing </body> tag
+-->
+<script>
+// Scroll to Top Button
+const scrollToTopBtn = document.createElement('button');
+scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+scrollToTopBtn.className = 'scroll-to-top';
+document.body.appendChild(scrollToTopBtn);
+
+window.addEventListener('scroll', () => {
+    if(window.scrollY > 300) {
+        scrollToTopBtn.classList.add('show');
+    } else {
+        scrollToTopBtn.classList.remove('show');
+    }
+});
+
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({behavior: 'smooth', top: 0});
+});
+</script>
+
+<!--
+FEATURE 2: PAGE LOAD ANIMATION
+Shows a loader when page loads
+-->
+<script>
+window.addEventListener('load', () => {
+    const loader = document.querySelector('.page-loader');
+    if(loader) {
+        loader.style.display = 'none';
+    }
+});
+</script>
+
+<!--
+FEATURE 3: FORM VALIDATION
+Enhanced form validation with error messages
+-->
+<script>
+function validateForm(formId) {
+    const form = document.getElementById(formId);
+    if(!form) return;
+    
+    form.addEventListener('submit', (e) => {
+        const name = form.querySelector('[name="name"]')?.value.trim();
+        const email = form.querySelector('[name="email"]')?.value.trim();
+        const phone = form.querySelector('[name="phone"]')?.value.trim();
+        
+        // Email validation regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        // Phone validation (basic)
+        const phoneRegex = /^[0-9]{10,}$/;
+        
+        if(!name) {
+            e.preventDefault();
+            alert('Please enter your name');
+            return false;
+        }
+        
+        if(!emailRegex.test(email)) {
+            e.preventDefault();
+            alert('Please enter a valid email');
+            return false;
+        }
+        
+        if(!phoneRegex.test(phone.replace(/[^0-9]/g, ''))) {
+            e.preventDefault();
+            alert('Please enter a valid phone number');
+            return false;
+        }
+    });
+}
+
+// Call validation on contact form
+validateForm('contactForm');
+</script>
+
+<!--
+FEATURE 4: SMOOTH SCROLL FOR ANCHOR LINKS
+-->
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if(href === '#') return;
+        
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if(target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+</script>
+
+<!--
+FEATURE 5: LAZY LOADING FOR IMAGES
+Loads images only when they come into view
+-->
+<script>
+if('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.add('loaded');
+                observer.unobserve(img);
+            }
+        });
+    });
+    
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+}
+</script>
+
+<!--
+FEATURE 6: COUNTER ANIMATION (for statistics)
+Animates numbers counting up
+-->
+<script>
+function animateCounters() {
+    const counters = document.querySelectorAll('.counter');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.textContent);
+        const increment = target / 100;
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if(current >= target) {
+                counter.textContent = target;
+                clearInterval(timer);
+            } else {
+                counter.textContent = Math.floor(current);
+            }
+        }, 20);
+    });
+}
+
+// Trigger when counters are visible
+const countersSection = document.querySelector('[data-counters]');
+if(countersSection) {
+    const observer = new IntersectionObserver(entries => {
+        if(entries[0].isIntersecting) {
+            animateCounters();
+            observer.disconnect();
+        }
+    });
+    observer.observe(countersSection);
+}
+</script>
+
+<!--
+FEATURE 7: MOBILE MENU TOGGLE
+For responsive navigation
+-->
+<script>
+function setupMobileMenu() {
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if(!navbar || !navLinks) return;
+    
+    // Create hamburger button
+    const hamburger = document.createElement('div');
+    hamburger.className = 'hamburger';
+    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+    hamburger.style.cssText = `
+        display: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: var(--primary-color);
+    `;
+    
+    // Add hamburger to navbar
+    navbar.appendChild(hamburger);
+    
+    // Show hamburger on mobile
+    const toggleMenu = () => {
+        if(window.innerWidth <= 768) {
+            hamburger.style.display = 'block';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '60px';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.background = 'white';
+            navLinks.style.boxShadow = 'var(--shadow)';
+            navLinks.style.maxHeight = navLinks.classList.contains('active') ? '500px' : '0';
+            navLinks.style.overflow = 'hidden';
+            navLinks.style.transition = 'max-height 0.3s ease';
+        } else {
+            hamburger.style.display = 'none';
+            navLinks.style.position = 'static';
+            navLinks.style.background = 'transparent';
+            navLinks.style.boxShadow = 'none';
+            navLinks.style.maxHeight = 'none';
+            navLinks.style.flexDirection = 'row';
+        }
+    };
+    
+    // Toggle click handler
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        toggleMenu();
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', toggleMenu);
+    
+    // Close menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            toggleMenu();
+        });
+    });
+    
+    toggleMenu();
+}
+
+setupMobileMenu();
+</script>
+
+<!--
+FEATURE 8: NOTIFICATION SYSTEM
+Show success/error messages to users
+-->
+<script>
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `alert alert-${type}`;
+    notification.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+        <span>${message}</span>
+    `;
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 3000;
+        animation: slideInRight 0.3s ease;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'slideOutRight 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+}
+
+// Add animation styles
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideInRight {
+        from { transform: translateX(400px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideOutRight {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(400px); opacity: 0; }
+    }
+`;
+document.head.appendChild(style);
+</script>
+
+<!--
+FEATURE 9: SERVICE COMPARISON TABLE
+Compare services side by side (optional page)
+-->
+<script>
+function setupServiceComparison() {
+    const comparisonTable = document.querySelector('[data-comparison]');
+    if(!comparisonTable) return;
+    
+    // Add comparison logic here
+    console.log('Service comparison table ready');
+}
+
+setupServiceComparison();
+</script>
+
+<!--
+FEATURE 10: TESTIMONIAL CAROUSEL
+Rotate testimonials automatically
+-->
+<script>
+function setupTestimonialCarousel() {
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    if(testimonials.length <= 1) return;
+    
+    let current = 0;
+    
+    const showTestimonial = (index) => {
+        testimonials.forEach(t => t.style.display = 'none');
+        testimonials[index].style.display = 'block';
+        testimonials[index].style.animation = 'fadeIn 0.5s ease';
+    };
+    
+    const nextTestimonial = () => {
+        current = (current + 1) % testimonials.length;
+        showTestimonial(current);
+    };
+    
+    showTestimonial(0);
+    setInterval(nextTestimonial, 5000);
+}
+
+setupTestimonialCarousel();
+</script>
+
+<!--
+FEATURE 11: DARK MODE TOGGLE (Optional)
+Add dark mode to your website
+-->
+<script>
+function setupDarkMode() {
+    const darkModeToggle = document.querySelector('[data-dark-mode]');
+    if(!darkModeToggle) return;
+    
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    
+    if(isDarkMode) {
+        document.body.classList.add('dark-mode');
+    }
+    
+    darkModeToggle.addEventListener('click', () => {
+        const isDark = document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', isDark);
+    });
+}
+
+setupDarkMode();
+</script>
+
+<!--
+FEATURE 12: KEYBOARD NAVIGATION
+Navigate using keyboard
+-->
+<script>
+document.addEventListener('keydown', (e) => {
+    // Press 'H' to go home
+    if(e.key === 'h' || e.key === 'H') {
+        window.location.href = 'index.html';
+    }
+    
+    // Press 'C' to go to contact
+    if(e.key === 'c' || e.key === 'C') {
+        window.location.href = 'contact.html';
+    }
+    
+    // Press 'S' to go to services
+    if(e.key === 's' || e.key === 'S') {
+        window.location.href = 'services.html';
+    }
+    
+    // Press 'Escape' to close modals
+    if(e.key === 'Escape') {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => modal.style.display = 'none');
+    }
+});
+</script>
+
+<!--
+FEATURE 13: PERFORMANCE MONITORING
+Track and display page load time
+-->
+<script>
+window.addEventListener('load', () => {
+    const perfData = performance.timing;
+    const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+    console.log('Page load time:', pageLoadTime + 'ms');
+    
+    // Log if page is slow
+    if(pageLoadTime > 3000) {
+        console.warn('Page loaded slowly:', pageLoadTime + 'ms');
+    }
+});
+</script>
+
+<!--
+FEATURE 14: BREADCRUMB NAVIGATION
+Show user current page location
+-->
+<script>
+function setupBreadcrumbs() {
+    const breadcrumb = document.querySelector('[data-breadcrumb]');
+    if(!breadcrumb) return;
+    
+    const pathArray = window.location.pathname.split('/').filter(x => x);
+    let breadcrumbHTML = '<a href="index.html">Home</a>';
+    
+    pathArray.forEach((path, index) => {
+        const name = path.replace('.html', '').replace('-', ' ');
+        breadcrumbHTML += ` / ${name}`;
+    });
+    
+    breadcrumb.innerHTML = breadcrumbHTML;
+}
+
+setupBreadcrumbs();
+</script>
+
+<!--
+FEATURE 15: LOCAL STORAGE FOR FORM DATA
+Save form data so user doesn't lose it if they close the page
+-->
+<script>
+function setupFormDataSaving() {
+    const form = document.getElementById('contactForm');
+    if(!form) return;
+    
+    const inputs = form.querySelectorAll('input, textarea, select');
+    
+    // Load saved data
+    inputs.forEach(input => {
+        const saved = localStorage.getItem(input.name);
+        if(saved) {
+            input.value = saved;
+        }
+    });
+    
+    // Save data on input
+    inputs.forEach(input => {
+        input.addEventListener('change', () => {
+            localStorage.setItem(input.name, input.value);
+        });
+    });
+    
+    // Clear saved data on form submit
+    form.addEventListener('submit', () => {
+        inputs.forEach(input => {
+            localStorage.removeItem(input.name);
+        });
+    });
+}
+
+setupFormDataSaving();
+</script>
+
+<!-- 
+===========================================
+HOW TO USE THESE FEATURES:
+
+1. Copy the script you want to use
+2. Paste it in your HTML file before closing </body> tag
+3. Test in browser
+4. Customize as needed
+
+EXAMPLE:
+<body>
+    <!-- Your content -->
+    
+    <!-- Add JavaScript features here -->
+    <script>
+        // Feature code
+    </script>
+</body>
+===========================================
+-->

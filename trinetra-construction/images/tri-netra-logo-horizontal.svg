@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <!-- Logo with company name horizontal layout -->
+  
+  <defs>
+    <style>
+      .logo-primary { fill: #1a5f7a; }
+      .logo-accent { fill: #ff9f29; }
+      .logo-dark { fill: #0a3d62; }
+      .logo-outline { stroke: #0a3d62; stroke-width: 1.5; fill: none; }
+      .company-name { font-family: 'Segoe UI', Arial, sans-serif; font-size: 28px; font-weight: 700; fill: #0a3d62; }
+      .tagline { font-family: 'Segoe UI', Arial, sans-serif; font-size: 10px; fill: #1a5f7a; letter-spacing: 1px; }
+    </style>
+  </defs>
+  
+  <!-- LOGO SYMBOL (Left Side) -->
+  <g id="logo-symbol">
+    <!-- Triangle outline -->
+    <path d="M 60 15 L 95 70 L 25 70 Z" class="logo-outline" opacity="0.2"/>
+    
+    <!-- Top Eye -->
+    <circle cx="60" cy="25" r="10" class="logo-primary"/>
+    <circle cx="60" cy="25" r="4" class="logo-accent"/>
+    
+    <!-- Bottom Left Eye -->
+    <circle cx="35" cy="60" r="10" class="logo-primary"/>
+    <circle cx="35" cy="60" r="4" class="logo-accent"/>
+    
+    <!-- Bottom Right Eye -->
+    <circle cx="85" cy="60" r="10" class="logo-primary"/>
+    <circle cx="85" cy="60" r="4" class="logo-accent"/>
+    
+    <!-- Connecting Lines -->
+    <line x1="60" y1="35" x2="35" y2="50" stroke="#ff9f29" stroke-width="1.5" opacity="0.6"/>
+    <line x1="60" y1="35" x2="85" y2="50" stroke="#ff9f29" stroke-width="1.5" opacity="0.6"/>
+    <line x1="35" y1="60" x2="85" y2="60" stroke="#ff9f29" stroke-width="1.5" opacity="0.4"/>
+    
+    <!-- Center dot -->
+    <circle cx="60" cy="48" r="3" class="logo-accent"/>
+  </g>
+  
+  <!-- TEXT (Right Side) -->
+  <g id="company-text">
+    <!-- Main company name -->
+    <text x="120" y="48" class="company-name">Tri Netra Construction</text>
+    
+    <!-- Tagline -->
+    <text x="120" y="65" class="tagline">BUILDING EXCELLENCE • CREATING LEGACIES</text>
+  </g>
+  
+  <!-- Optional: Decorative line -->
+  <line x1="110" y1="30" x2="110" y2="70" stroke="#ff9f29" stroke-width="2" opacity="0.5"/>
+  
+</svg>
+
+<!-- 
+HORIZONTAL LOGO WITH TEXT
+Use this for:
+- Website headers
+- Email signatures
+- Social media profiles
+- Brochures (horizontal layout)
+
+IMPLEMENTATION:
+
+1. SAVE AS: tri-netra-logo-horizontal.svg
+
+2. USE IN HTML:
+   <img src="images/tri-netra-logo-horizontal.svg" alt="Tri Netra Construction" 
+        class="logo-horizontal" style="max-width: 100%; height: auto;">
+
+3. CSS STYLING:
+   .logo-horizontal {
+     max-width: 400px;
+     height: auto;
+     margin: 20px 0;
+   }
+   
+   /* For header */
+   .header-logo {
+     max-width: 300px;
+   }
+   
+   /* For responsive */
+   @media (max-width: 768px) {
+     .logo-horizontal {
+       max-width: 250px;
+     }
+   }
+
+4. ADD TO HTML:
+   In navbar:
+   <nav>
+     <img src="images/tri-netra-logo-horizontal.svg" alt="Tri Netra" 
+          class="header-logo" style="width: 280px;">
+   </nav>
+
+5. EMAIL SIGNATURE:
+   <img src="images/tri-netra-logo-horizontal.svg" alt="Logo" 
+        style="width: 300px; max-width: 100%; height: auto;">
+-->

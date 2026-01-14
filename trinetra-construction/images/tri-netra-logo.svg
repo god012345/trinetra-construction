@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Define styles -->
+  <defs>
+    <style>
+      .logo-primary { fill: #1a5f7a; }
+      .logo-accent { fill: #ff9f29; }
+      .logo-dark { fill: #0a3d62; }
+      .logo-outline { stroke: #0a3d62; stroke-width: 2; fill: none; }
+    </style>
+  </defs>
+  
+  <!-- Background circle (optional - can be removed) -->
+  <circle cx="100" cy="100" r="95" class="logo-outline" opacity="0.3"/>
+  
+  <!-- Main triangle/shield shape for three eyes concept -->
+  <!-- Triangle outline for structure -->
+  <path d="M 100 20 L 170 160 L 30 160 Z" class="logo-outline" opacity="0.2"/>
+  
+  <!-- THREE EYES / STRUCTURES - Top Eye -->
+  <g id="eye-top">
+    <!-- Outer circle -->
+    <circle cx="100" cy="50" r="18" class="logo-primary"/>
+    <!-- Inner structure (building-like) -->
+    <rect x="92" y="42" width="16" height="16" rx="2" fill="#ffffff" opacity="0.3"/>
+    <!-- Eye pupil / structure detail -->
+    <circle cx="100" cy="50" r="6" class="logo-accent"/>
+  </g>
+  
+  <!-- THREE EYES / STRUCTURES - Bottom Left Eye -->
+  <g id="eye-left">
+    <!-- Outer circle -->
+    <circle cx="55" cy="125" r="18" class="logo-primary"/>
+    <!-- Inner structure -->
+    <rect x="47" y="117" width="16" height="16" rx="2" fill="#ffffff" opacity="0.3"/>
+    <!-- Eye pupil / structure detail -->
+    <circle cx="55" cy="125" r="6" class="logo-accent"/>
+  </g>
+  
+  <!-- THREE EYES / STRUCTURES - Bottom Right Eye -->
+  <g id="eye-right">
+    <!-- Outer circle -->
+    <circle cx="145" cy="125" r="18" class="logo-primary"/>
+    <!-- Inner structure -->
+    <rect x="137" y="117" width="16" height="16" rx="2" fill="#ffffff" opacity="0.3"/>
+    <!-- Eye pupil / structure detail -->
+    <circle cx="145" cy="125" r="6" class="logo-accent"/>
+  </g>
+  
+  <!-- Connecting lines - representing integration and unity -->
+  <line x1="100" y1="68" x2="55" y2="107" stroke="#ff9f29" stroke-width="2" opacity="0.6"/>
+  <line x1="100" y1="68" x2="145" y2="107" stroke="#ff9f29" stroke-width="2" opacity="0.6"/>
+  <line x1="55" y1="125" x2="145" y2="125" stroke="#ff9f29" stroke-width="2" opacity="0.4"/>
+  
+  <!-- Optional: Center element representing stability -->
+  <circle cx="100" cy="100" r="8" class="logo-accent"/>
+  
+  <!-- Optional: Subtle architectural elements -->
+  <!-- Horizontal lines representing building levels -->
+  <line x1="85" y1="50" x2="115" y2="50" stroke="#0a3d62" stroke-width="1" opacity="0.4"/>
+  
+</svg>
+
+<!-- 
+USAGE INSTRUCTIONS:
+
+1. SAVE THIS FILE: Save as "tri-netra-logo.svg" in your images folder
+
+2. USE ON WEBSITE:
+   <!-- In HTML -->
+   <img src="images/tri-netra-logo.svg" alt="Tri Netra Construction" class="logo" width="200">
+   
+   <!-- Or as background -->
+   <div style="background-image: url('images/tri-netra-logo.svg');"></div>
+
+3. CSS STYLING:
+   .logo {
+     max-width: 200px;
+     height: auto;
+   }
+   
+   .logo-header {
+     width: 150px;
+   }
+   
+   .logo-small {
+     width: 50px;
+   }
+
+4. RESPONSIVE SIZING:
+   <!-- Mobile -->
+   <img src="images/tri-netra-logo.svg" alt="Logo" class="logo" style="width: 100px;">
+   
+   <!-- Desktop -->
+   <img src="images/tri-netra-logo.svg" alt="Logo" class="logo" style="width: 200px;">
+
+5. COLORS:
+   - Primary Blue: #1a5f7a
+   - Accent Gold: #ff9f29
+   - Dark Blue: #0a3d62
+   - To change colors, edit the hex values in the <defs> section
+
+6. FAVICON:
+   Convert SVG to PNG (16x16, 32x32, 64x64) and add to head:
+   <link rel="icon" type="image/png" href="images/favicon.png">
+
+7. PRINT:
+   Export SVG to PDF or EPS for professional printing
+
+8. FURTHER CUSTOMIZATION:
+   - Adjust circle sizes (r="18" to make bigger/smaller)
+   - Adjust colors (#1a5f7a for primary color)
+   - Modify spacing and positions
+   - Add or remove connecting lines
+   - Change opacity values
+-->
